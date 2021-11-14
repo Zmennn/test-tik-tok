@@ -1,17 +1,25 @@
-import { AddInformation, Hashtags, Text, UserInfo, Video } from './index';
+import { AddInformation, Hashtags, Author, UserInfo, Video } from './index';
 
 
 export function Gallery({ dataArray }) {
     
+    console.log(dataArray);
 
     return dataArray.map((element) => 
     (<>
-        <div> Hi</div>
+        
             <UserInfo />
         <Video
+            text={element.text}
             url={element.videoUrl}
+            id={element.id}
         />
-            <Text/>
+        {console.log(element.authorMeta.avatar)}
+        <Author
+            id={element.id}
+            avatar={element.authorMeta.avatar}
+            name={element.authorMeta.nickName}
+        />
             <Hashtags/>
             <AddInformation/>
     </>)
