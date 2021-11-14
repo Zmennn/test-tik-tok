@@ -7,21 +7,28 @@ export function Gallery({ dataArray }) {
 
     return dataArray.map((element) => 
     (<>
-        
-            <UserInfo />
+        <Author
+            id={element.id}
+            avatar={element.authorMeta.avatar}
+            name={element.authorMeta.nickName}
+        />
+            
         <Video
             text={element.text}
             url={element.videoUrl}
             id={element.id}
         />
         {console.log(element.authorMeta.avatar)}
-        <Author
+        
+        <Hashtags
+            hash={element.hashtags}
             id={element.id}
-            avatar={element.authorMeta.avatar}
-            name={element.authorMeta.nickName}
         />
-            <Hashtags/>
-            <AddInformation/>
+        <AddInformation
+            comments={element.commentCount}
+            likes={element.diggCount}
+            id={element.id}
+        />
     </>)
     )
         

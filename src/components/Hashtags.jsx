@@ -1,5 +1,16 @@
 
 
-export function Hashtags() {
-    return null
+export function Hashtags({ hash=[],id }) {
+    return (<div
+        key={id}>
+        {hash.map((element) => (<>
+        <div
+         key={element.id}
+        >
+           {`#${element.name}`} 
+        </div>
+           </>))}
+    </div>)
+    
 }
+
