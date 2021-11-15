@@ -1,0 +1,10 @@
+.container {
+  width: calc(70vh / 960 * 540);
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.innerContainer {
+  padding-right: 10px;
+}

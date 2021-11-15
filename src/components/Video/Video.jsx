@@ -1,44 +1,55 @@
 import style from './style.module.css';
+import { useEffect, useState } from 'react';
 
-export function Video({ url,id,text }) {
 
-    function position(event) {
-        return event.target.getBoundingClientRect(event);
-    };
+export function Video({ url, id, text }) {
+    const [status, setStatus] = useState(false);
 
-    function handleScroll(event){ if (-position(event).top > position(event).height*0.4
-                ||position(event).bottom>window.innerHeight+position(event).height*0.4) {
-        event.target.pause();
-        window.removeEventListener('scroll', () => {               
-              handleScroll(event) 
-            }); 
-    }
-    };
+    useEffect(() => {addObserver(document.getElementById(id))},[id])
 
+   
     const clickHandler = (event) => {
         if (event.target.tagName !== "VIDEO") { return };
-
-        if(event.target.paused){    
-            event.target.play();            
-            window.addEventListener('scroll', () => {               
-              handleScroll(event) 
-            });    
+        if (!status) { return };
+        if (event.target.paused) {
+            event.target.play();
         } else {
             event.target.pause();
-            window.removeEventListener('scroll', () => {               
-              handleScroll(event) 
-            }); 
         }
-    }
+    };
+
+    function addObserver(target) {
+       const observer = new IntersectionObserver((ev)=>{startMusic(ev)}, {
+    threshold: 0.9
+        })
+        observer.observe(target)
+    };
+
+    function startMusic(ev) {
+        const target = ev[0].target.children[1];
+        const status = (ev[0].isIntersecting);
+        if (status) {            
+                target.play();
+                setStatus(true);              
+        } else {
+            target.pause();
+            setStatus(false);
+        }
+    };
 
     return (<>
-        <div>
+    <div id={id}>
+        <div className={style.text}>
             {text}
         </div>
-        <video
-        key={id}
-        onClick={clickHandler}
-        src={url}
+            
+        <video          
+            className={style.video}
+            key={id}
+            onClick={clickHandler}
+            src={url}
         />
-        </>)
-}
+    </div>
+    </>   
+    )
+};

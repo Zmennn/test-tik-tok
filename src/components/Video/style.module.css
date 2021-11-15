@@ -1,0 +1,8 @@
+.video {
+  height: calc(70vh);
+  padding-bottom: 10px;
+}
+.text {
+  width: calc(70vh / 960 * 540);
+  padding-bottom: 10px;
+}
