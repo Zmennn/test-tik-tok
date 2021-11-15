@@ -1,4 +1,4 @@
-import style from './Author.module.css';
+import style from './style.module.css';
 
 export function Author({avatar,id,name}) {
     return (<>

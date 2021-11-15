@@ -1,4 +1,5 @@
-import { AddInformation, Hashtags, Author, UserInfo, Video } from './index';
+import { AddInformation, Hashtags, Author, Video } from '../index';
+import style from './style.module.css';
 
 
 export function Gallery({ dataArray }) {
@@ -18,7 +19,7 @@ export function Gallery({ dataArray }) {
             url={element.videoUrl}
             id={element.id}
         />
-        {console.log(element.authorMeta.avatar)}
+        
         
         <Hashtags
             hash={element.hashtags}

@@ -1,4 +1,4 @@
-
+import style from './style.module.css';
 
 export function Hashtags({ hash=[],id }) {
     return (<div

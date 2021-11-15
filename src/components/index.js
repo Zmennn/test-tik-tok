@@ -1,6 +1,6 @@
-export { AddInformation } from "./AddInformation";
-export { Hashtags } from "./Hashtags";
+export { AddInformation } from "./AddInformation/AddInformation";
+export { Hashtags } from "./Hashtags/Hashtags";
 export { Author } from "./Author/Author";
-export { UserInfo } from "./UserInfo";
-export { Video } from "./Video";
-export { Gallery } from "./Gallery";
+
+export { Video } from "./Video/Video";
+export { Gallery } from "./Gallery/Gallery";
