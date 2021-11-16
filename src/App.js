@@ -27,7 +27,7 @@ function App() {
           if (res.data.stats) {
             return res;
           } else {
-            throw "Data err";
+            throw new Error();
           }
         })
         .then((res) => setUserData(res))
