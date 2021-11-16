@@ -1,14 +1,11 @@
 import style from './style.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useCallback } from 'react';
 
 
 export function Video({ url, id, text }) {
     const [status, setStatus] = useState(false);
-
-    useEffect(() => {addObserver(document.getElementById(id))},[id])
-
-   
-    const clickHandler = (event) => {
+    
+    const clickHandler = useCallback((event) => {
         if (event.target.tagName !== "VIDEO") { return };
         if (!status) { return };
         if (event.target.paused) {
@@ -16,16 +13,19 @@ export function Video({ url, id, text }) {
         } else {
             event.target.pause();
         }
-    };
-
-    function addObserver(target) {
+    }, [status]);
+    
+    useEffect(
+       function addObserver() {
        const observer = new IntersectionObserver((ev)=>{startMusic(ev)}, {
-    threshold: 0.9
+           threshold: 0.9
         })
-        observer.observe(target)
-    };
+        observer.observe(document.getElementById(id));
+       return()=>observer.disconnect()  
+    });
 
-    function startMusic(ev) {
+    
+    const startMusic = (ev)=>{
         const target = ev[0].target.children[1];
         const status = (ev[0].isIntersecting);
         if (status) {            

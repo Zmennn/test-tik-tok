@@ -1,22 +1,30 @@
+import style from './style.module.css'
 
-
-export function User({ page, name, changPage, userData }) {
-    
-const handleClick=()=>{changPage('start')}
-
+export function User({ changPage, userData }) {
+    try{
     return (<>
-        <div>{page} {name}</div>
-        <img src={userData.data.user.avatarMedium} alt="user avatar" />
-        <h3>{userData.data.user.nickname}</h3>
-        <div>
-            <div>{userData.data.stats.followerCount}</div>
-            <div>{userData.data.stats.followingCount}</div>
-            <div>{userData.data.stats.heatCount}</div>
-            <div>{userData.data.stats.videoCount }</div>
-        </div>
+        
         <button
+            className={style.button}
             type="button"
-            onClick={handleClick}
-        >Go back</button>
+            onClick={() => { changPage("firstPg") }}
+        >Go back
+        </button>
+        <div className={style.container}>
+          <img className={style.img} src={userData.data.user.avatarMedium} alt="user avatar" />
+          <div className={style.textContainer}>
+            <h3 className={style.name}>{userData.data.user.nickname}</h3>
+            <ul className={style.list}>
+              <li className={style.listElement}>followers--- {userData.data.stats.followerCount} </li>
+              <li className={style.listElement}>following--- {userData.data.stats.followingCount} </li>
+              <li className={style.listElement}>hearts------ {userData.data.stats.heartCount} </li>
+              <li className={style.listElement}>videos------ {userData.data.stats.videoCount } </li>
+            </ul>
+          </div>
+        </div>   
+        <div className={style.gallery}>
+
+        </div>
     </>)
+} catch{changPage('error')}
 }

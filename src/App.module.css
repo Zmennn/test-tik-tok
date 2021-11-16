@@ -1,0 +1,10 @@
+.spinContainer {
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}

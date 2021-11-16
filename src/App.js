@@ -1,54 +1,69 @@
-import "./App.css";
+import style from "./App.module.css";
 import { request, userRequest } from "./helpers/request";
-import { Gallery, User } from "./components/index";
+import { Gallery, User, Error } from "./components/index";
 import { useEffect, useState } from "react";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 function App() {
   const [dataArray, setDataArray] = useState([]);
-  const [page, setPage] = useState("start");
+  const [status, setStatus] = useState("pending");
   const [name, setName] = useState(false);
   const [userData, setUserData] = useState();
 
   useEffect(() => {
-    request().then((res) => {
-      setDataArray(res.data);
-    });
+    setStatus("pending");
+    request()
+      .then((res) => setDataArray(res.data))
+      .then(() => setStatus("firstPg"))
+      .catch((err) => setStatus("error"));
   }, []);
 
   useEffect(() => {
-    if (name) {
-      userRequest("info", name).then((res) => setUserData(res));
-    }
-  }, [name]);
+    if (name && status === "second") {
+      setStatus("pending");
+      userRequest("info", name)
+        .then((res) => setUserData(res))
+        .then(() => setStatus("secondPg"))
+        .catch((err) => setStatus("error"));
 
-  const changPage = (page) => {
-    setPage(page);
+      // userRequest("feed", name)
+      //   .then((res => { console.log(res) }))
+    }
+  }, [name, status]);
+
+  const changStatus = (status) => {
+    setStatus(status);
   };
   const changName = (newName) => {
     setName(newName);
   };
 
-  if (page === "start") {
-    return (
-      <Gallery
-        dataArray={dataArray}
-        changPage={changPage}
-        changName={changName}
-      />
-    );
-  } else {
-    console.log(userData);
-    if (userData.data) {
-      return (
-        <User
-          page={page}
-          name={name}
-          changPage={changPage}
-          userData={userData}
+  return (
+    <>
+      {status === "firstPg" && (
+        <Gallery
+          dataArray={dataArray}
+          changPage={changStatus}
+          changName={changName}
         />
-      );
-    }
-  }
+      )}
+
+      {status === "pending" && (
+        <div className={style.container}>
+          <div className={style.spinContainer}>
+            <Loader type="Circles" color="#00BFFF" height={120} width={120} />
+          </div>
+        </div>
+      )}
+
+      {status === "secondPg" && (
+        <User changPage={changStatus} userData={userData} />
+      )}
+
+      {status === "error" && <Error />}
+    </>
+  );
 }
 
 export default App;
