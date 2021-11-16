@@ -23,6 +23,13 @@ function App() {
     if (name && status === "second") {
       setStatus("pending");
       userRequest("info", name)
+        .then((res) => {
+          if (res.data.stats) {
+            return res;
+          } else {
+            throw "Data err";
+          }
+        })
         .then((res) => setUserData(res))
         .then(() => setStatus("secondPg"))
         .catch((err) => setStatus("error"));
