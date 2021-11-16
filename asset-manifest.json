@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/test-tik-tok/static/css/main.e5348b7c.chunk.css",
+    "main.js": "/test-tik-tok/static/js/main.9d63ae1e.chunk.js",
+    "main.js.map": "/test-tik-tok/static/js/main.9d63ae1e.chunk.js.map",
+    "runtime-main.js": "/test-tik-tok/static/js/runtime-main.80c2b2dd.js",
+    "runtime-main.js.map": "/test-tik-tok/static/js/runtime-main.80c2b2dd.js.map",
+    "static/css/2.fe79023c.chunk.css": "/test-tik-tok/static/css/2.fe79023c.chunk.css",
+    "static/js/2.a983a94d.chunk.js": "/test-tik-tok/static/js/2.a983a94d.chunk.js",
+    "static/js/2.a983a94d.chunk.js.map": "/test-tik-tok/static/js/2.a983a94d.chunk.js.map",
+    "index.html": "/test-tik-tok/index.html",
+    "static/css/2.fe79023c.chunk.css.map": "/test-tik-tok/static/css/2.fe79023c.chunk.css.map",
+    "static/css/main.e5348b7c.chunk.css.map": "/test-tik-tok/static/css/main.e5348b7c.chunk.css.map",
+    "static/js/2.a983a94d.chunk.js.LICENSE.txt": "/test-tik-tok/static/js/2.a983a94d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80c2b2dd.js",
+    "static/css/2.fe79023c.chunk.css",
+    "static/js/2.a983a94d.chunk.js",
+    "static/css/main.e5348b7c.chunk.css",
+    "static/js/main.9d63ae1e.chunk.js"
+  ]
+}
