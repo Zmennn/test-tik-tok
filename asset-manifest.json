@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/test-tik-tok/static/css/main.3647aa84.chunk.css",
-    "main.js": "/test-tik-tok/static/js/main.db2cb343.chunk.js",
-    "main.js.map": "/test-tik-tok/static/js/main.db2cb343.chunk.js.map",
+    "main.css": "/test-tik-tok/static/css/main.ffe55530.chunk.css",
+    "main.js": "/test-tik-tok/static/js/main.90def126.chunk.js",
+    "main.js.map": "/test-tik-tok/static/js/main.90def126.chunk.js.map",
     "runtime-main.js": "/test-tik-tok/static/js/runtime-main.80c2b2dd.js",
     "runtime-main.js.map": "/test-tik-tok/static/js/runtime-main.80c2b2dd.js.map",
     "static/css/2.fe79023c.chunk.css": "/test-tik-tok/static/css/2.fe79023c.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.f1f2fac7.chunk.js.map": "/test-tik-tok/static/js/2.f1f2fac7.chunk.js.map",
     "index.html": "/test-tik-tok/index.html",
     "static/css/2.fe79023c.chunk.css.map": "/test-tik-tok/static/css/2.fe79023c.chunk.css.map",
-    "static/css/main.3647aa84.chunk.css.map": "/test-tik-tok/static/css/main.3647aa84.chunk.css.map",
+    "static/css/main.ffe55530.chunk.css.map": "/test-tik-tok/static/css/main.ffe55530.chunk.css.map",
     "static/js/2.f1f2fac7.chunk.js.LICENSE.txt": "/test-tik-tok/static/js/2.f1f2fac7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.80c2b2dd.js",
     "static/css/2.fe79023c.chunk.css",
     "static/js/2.f1f2fac7.chunk.js",
-    "static/css/main.3647aa84.chunk.css",
-    "static/js/main.db2cb343.chunk.js"
+    "static/css/main.ffe55530.chunk.css",
+    "static/js/main.90def126.chunk.js"
   ]
 }
