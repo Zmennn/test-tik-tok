@@ -1,6 +1,7 @@
-import style from './style.module.css'
+import style from './style.module.css';
+import {UserCard} from '../index'
 
-export function User({ changPage, userData }) {
+export function User({ changPage, userData,dataArray }) {
     try{
     return (<>
         
@@ -23,8 +24,11 @@ export function User({ changPage, userData }) {
           </div>
         </div>   
         <div className={style.gallery}>
-
-        </div>
+      </div>
+      <ul className={style.videoContainer}>
+        <UserCard
+          dataArray={dataArray }/>
+      </ul>
     </>)
 } catch{changPage('error')}
 }

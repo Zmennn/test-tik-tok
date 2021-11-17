@@ -1,0 +1,11 @@
+.video {
+  display: block;
+  width: 100%;
+}
+.text {
+  text-align: center;
+}
+.galleryElement {
+  max-width: 300px;
+  outline: olivedrab 1px solid;
+}

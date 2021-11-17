@@ -38,7 +38,9 @@ export function Video({ url, id, text }) {
     };
 
     return (<>
-    <div id={id}>
+    <div id={id}
+           
+        >
         <div className={style.text}>
             {text}
         </div>

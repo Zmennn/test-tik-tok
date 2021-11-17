@@ -1,13 +1,17 @@
 import { AddInformation, Hashtags, Author, Video } from '../index';
+import style from './style.module.css';
 
 export function Gallery({ dataArray,changPage,changName }) {
     
 try{
     return dataArray.map((element) =>
         
-    (<>
+    (<div
+        className={style.container}
+        key={element.id}
+    >
         <Author
-            key={`qw${element.id}`}
+            
             id={element.id}
             avatar={element.authorMeta.avatar}
             name={element.authorMeta.nickName}
@@ -17,7 +21,7 @@ try{
         />
             
         <Video
-            key={`sw${element.id}`}
+            
             text={element.text}
             url={element.videoUrl}
             id={element.id}
@@ -25,16 +29,16 @@ try{
         
         
         <Hashtags
-            key={`fw${element.id}`}
+            
             hash={element.hashtags}
             id={element.id}
         />
         <AddInformation
-            key={`hw${element.id}`}
+            
             comments={element.commentCount}
             likes={element.diggCount}
             id={element.id}
         />
-        </>)
+        </div>)
     )} catch { changPage('error') }  
 }

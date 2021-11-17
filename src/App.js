@@ -65,7 +65,11 @@ function App() {
       )}
 
       {status === "secondPg" && (
-        <User changPage={changStatus} userData={userData} />
+        <User
+          changPage={changStatus}
+          userData={userData}
+          dataArray={dataArray}
+        />
       )}
 
       {status === "error" && <Error />}
