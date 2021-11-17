@@ -1,7 +1,7 @@
 import style from './style.module.css';
 
 export function UserCard({dataArray}) {
-    console.log(dataArray);
+    
     return dataArray.map((el) => 
         (
         <li key={el.id}

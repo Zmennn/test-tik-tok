@@ -6,3 +6,4 @@ export { Video } from "./Video/Video";
 export { Gallery } from "./Gallery/Gallery";
 export { Error } from "./Error/Error.jsx";
 export { UserCard } from "./UserCard/UserCard.jsx";
+export { Pagination } from "./Pagination/Pagination.jsx";

@@ -1,7 +1,15 @@
 import style from './style.module.css';
-import {UserCard} from '../index'
+import { UserCard, Pagination } from '../index';
+import { useEffect, useState } from 'react';
 
-export function User({ changPage, userData,dataArray }) {
+export function User({ changPage, userData, dataArray }) {
+  const [numberPage, setNumberPage] = useState(1);
+  const [resultArr, setResultArr] = useState([]);
+
+  const isNumberPage = (res) => { setNumberPage(res) };
+
+  useEffect(() => {setResultArr( dataArray.slice(((numberPage-1)*10),(numberPage-1)*10+10)); }, [numberPage, dataArray]);
+
     try{
     return (<>
         
@@ -27,7 +35,12 @@ export function User({ changPage, userData,dataArray }) {
       </div>
       <ul className={style.videoContainer}>
         <UserCard
-          dataArray={dataArray }/>
+          dataArray={resultArr }/>
+      </ul>
+      <ul className={style.buttonList}>
+        <Pagination
+          isNumberPage={isNumberPage}
+        />
       </ul>
     </>)
 } catch{changPage('error')}
