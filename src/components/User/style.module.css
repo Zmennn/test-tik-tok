@@ -9,6 +9,13 @@
   line-height: 1.1;
   background-color: rgb(182, 240, 124);
   z-index: 10;
+  border: none;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 280ms;
+}
+.button:hover {
+  background-color: rgb(239, 241, 124);
 }
 .img {
   width: 300px;
