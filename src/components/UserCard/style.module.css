@@ -4,7 +4,9 @@
 }
 .text {
   text-align: center;
+  font-size: 20px;
+  font-weight: 600;
 }
 .galleryElement {
-  max-width: 300px;
+  max-width: 450px;
 }
